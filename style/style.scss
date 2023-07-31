@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary: #2592F6;
+    --grey-primary: #777777;
+    --dark-grey: #293F53;
+    --grey-bg: #F4F7FC;
+    --green: #65AE1C;
+    --gold: #D4A017;
+    --silver-grey: #C0C0C0;
+    --h2: 20px;
+    --h3: 16px;
+    --h4: 14px;
+    --h5: 12px;
+    --white: #ffff;
+    --black: black;
+}
+
+@function add($px) {
+    $var: 10px;
+    $px: $px +$var;
+    @return $px;
+}
+
+@mixin flex() {
+    display: flex;
+    align-items: center;
+    gap: add(0);
+}
+
+@mixin grid($col: grid, $nb: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr) {
+    display: $col;
+    grid-template-columns: $nb;
+}
+
+@mixin border($bor: var(--primary)) {
+    border: solid $bor 1px transparent;
+    background-color: $bor;
+    border-radius: 5px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    @include grid();
+    text-decoration: none;
+    list-style: none;
+    background-color: var(--grey-bg);
+
+}
+
+.sidebar {
+    grid-column: span 2 / span 2;
+    background: var(--white);
+    height: 100vh;
+    width: 100%;
+    .navlist {
+        padding-top: add(30);
+    }
+}
+
+.items {
+    @include flex();
+    padding: add(0);
+    padding-top: add(0);
+}
+
+.dash {
+    color: var(--dark-grey);
+    font-size: var(--h4);
+}
+
+.h4 {
+    font-size: var(--h3);
+}
+
+main {
+    grid-column: span 10 / span 10;
+    background-color: var(--grey-bg);
+    padding: 10px 16px;
+}
+
+.navigation {
+    @include flex();
+    justify-content: space-between;
+    border: var(--white) solid 1px;
+    background-color: var(--white);
+}
+
+.button {
+    @include border();
+
+    .dash {
+        color: var(--white);
+    }
+}
+
+.nav {
+    @include flex();
+    justify-content: space-between;
+    padding-top: add(10);
+
+    .white {
+        @include border(var(--white));
+
+        .dash {
+            color: var(--dark-grey);
+        }
+
+        .blue {
+            color: var(--primary);
+        }
+    }
+
+    .button-item {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.course-list {
+    @include flex();
+    padding-top: add(20);
+
+    .white {
+        @include border(var(--white));
+        padding: 0px add(6);
+        border-radius: 100px;
+    }
+
+    .blue {
+        background-color: var(--primary);
+    }
+
+    .txt-w {
+        color: var(--white);
+    }
+}
+
+.card {
+    @include grid(grid, 1fr 1fr 1fr);
+    padding-top: add(10px);
+    gap: add(6);
+
+}
+
+.blue {
+    color: var(--primary);
+}
+
+.desc {
+    padding-top: add(0);
+    padding-left: add(0);
+}
+
+.subtittle {
+    display: flex
+}
+
+.button {
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.silver {
+    background-color: var(--silver-grey);
+}
+
+.gold {
+    background-color: var(--gold);
+}
+
+.price {
+    @include flex();
+    padding-left: add(0);
+    padding-bottom: add(0);
+}
+
+.card-img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 100%;
+}
+
+.card-items {
+    @include border(var(--white));
+    margin-top: -5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.select {
+    @include grid(grid, 1fr 1fr 1fr 1fr 1fr);
+    padding-top: add(20);
+    gap: 10px;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.selection {
+    grid-column: span 3 / span 3;
+    @include grid(grid, 1fr 1fr 1fr);
+    gap: add(6);
+    grid-row: span 3;
+}
+
+.select-items {
+    border-radius: 6px;
+}
+
+.chat {
+    grid-column: span 2 / span 2;
+    background-color: var(--white);
+    height: 100vh;
+    grid-row: span 6;
+}
+
+.composant {
+    display: flex;
+    gap: 5px;
+}
+
+.comp {
+    padding-left: add(0);
+}
+
+.bottom {
+    padding-bottom: add(0);
+}

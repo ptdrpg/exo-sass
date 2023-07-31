@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --primary: #2592F6;
+  --grey-primary: #777777;
+  --dark-grey: #293F53;
+  --grey-bg: #F4F7FC;
+  --green: #65AE1C;
+  --gold: #D4A017;
+  --silver-grey: #C0C0C0;
+  --h2: 20px;
+  --h3: 16px;
+  --h4: 14px;
+  --h5: 12px;
+  --white: #ffff;
+  --black: black;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/*# sourceMappingURL=categorie.css.map */
